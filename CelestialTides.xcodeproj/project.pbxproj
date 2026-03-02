@@ -1,0 +1,580 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		091DE8C66C0D54E5010E28FA /* TideChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C137F95206E99BFE536DA2 /* TideChart.swift */; };
+		0E5368C9E872EE29143E16A1 /* TideCalculations+Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026756F712366440FDB993C8 /* TideCalculations+Forecast.swift */; };
+		13563460858CBC330FEC829B /* TidePathView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BAC9C0F70D9675E8C6B94EE /* TidePathView.swift */; };
+		14DCFFD7FB3396221CEF6EFD /* TideCalibration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F6FF80643B419EDBBFA581 /* TideCalibration.swift */; };
+		220C1D2FEACE0B8CF7A04757 /* FutureTidesTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6906FB277AC8F8A38F77F659 /* FutureTidesTable.swift */; };
+		22672CE260E31CED3CEC0607 /* TideRuntime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA2AF779A0F5D92398BC683 /* TideRuntime.swift */; };
+		25711EED59C970DA4BCC31BC /* TidePathView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BAC9C0F70D9675E8C6B94EE /* TidePathView.swift */; };
+		30E1056C18235D1B37CCE2E5 /* TimeZoneSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C799EF8DEC9E102C4BB32800 /* TimeZoneSelection.swift */; };
+		3DC9BD48C8A379642B0248F4 /* CelestialTidesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1DF622645CBD4D3593B1B6 /* CelestialTidesApp.swift */; };
+		3EE51DEF359610D74C6FD1C9 /* SharedDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C55A8E062CFAFEEE0FD739D /* SharedDefaults.swift */; };
+		49EF3B0106F5D45A9656A073 /* LastSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41931DE405CAD6FF23E8AB0 /* LastSelectionCell.swift */; };
+		4CE8B8E16AD596E871D15553 /* CelestialTidesWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 1461B59E0AB3D263F7FFBD1E /* CelestialTidesWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		52AF1DAFC0928838D0BD367E /* CelestialTidesWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1754EACB03C5274F06484479 /* CelestialTidesWidget.swift */; };
+		572F80C909AD6F697D6E5CB7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE7F01DA37F6102A0202C80 /* ContentView.swift */; };
+		5D91FDE1E07E39037F5D4AB6 /* TideCalculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F1DB4FF980A1DFE97F8053 /* TideCalculations.swift */; };
+		60BEDB82398BB334431F06E1 /* LocationSettingsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0928A6C7D1198BB4D88BBCEF /* LocationSettingsSection.swift */; };
+		63224D4C301AB7478DD53B2B /* ExtremaBadgesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E899FBF6472B8814DC1F7FB /* ExtremaBadgesView.swift */; };
+		65FEB0D4B86DF825A5520356 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE85FD04E255C708BA7E6DDD /* LocationManager.swift */; };
+		6FC7250C029C315DF94A9A74 /* TideChartMath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F5E0D39682317D40AFB0F9 /* TideChartMath.swift */; };
+		6FEDD614767DFC72C1EFF18E /* CelestialOffsetSettingsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EDB5415B642CDE82D3F1D3 /* CelestialOffsetSettingsSection.swift */; };
+		84B25031D506E06086B05E1E /* LastSelectionPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83833C2C91D63DDDB5DFD793 /* LastSelectionPanel.swift */; };
+		873FBDAC8950E1186058C347 /* SettingsSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9854ED3F64EC93DB1EBE5988 /* SettingsSheet.swift */; };
+		8BA6514CB13E8596086EC65C /* TideModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = B906A7A26C07A6FE09D59022 /* TideModels.swift */; };
+		8D3A8D5B2B04EE915E27175A /* SharedDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C55A8E062CFAFEEE0FD739D /* SharedDefaults.swift */; };
+		8E3004FE77241D2C11BB3A87 /* TideConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2565063017312FB4B0CAB0 /* TideConfiguration.swift */; };
+		931C87EF70C664D93B42FF5C /* TideCalculations+Astronomy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBEC1CBBE0686E130FCDE6E /* TideCalculations+Astronomy.swift */; };
+		9467197399D149D624813891 /* AppExplainerSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E4E952D406DA08D9E7F4B1 /* AppExplainerSheet.swift */; };
+		9714E1FDEBC59C67F8955FA5 /* TopNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A73E26B027611269785B2F9 /* TopNavigationView.swift */; };
+		9CFA3128650ECF9A52453C2D /* TideChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C137F95206E99BFE536DA2 /* TideChart.swift */; };
+		9E137EFFE45D64693C380898 /* TideRuntime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA2AF779A0F5D92398BC683 /* TideRuntime.swift */; };
+		A11A4A569BC8A380A4C20765 /* MidnightLinesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89ECD8A4809DB6A49225F2D2 /* MidnightLinesView.swift */; };
+		A4918D55AE17F9C9DCEECEB6 /* TideConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2565063017312FB4B0CAB0 /* TideConfiguration.swift */; };
+		A919345C4B290292C7D9E8DE /* TideViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFE84F068BDA3A91D9429F2 /* TideViewModel.swift */; };
+		AE443215981C4D844627E95C /* TideCalculations+Astronomy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBEC1CBBE0686E130FCDE6E /* TideCalculations+Astronomy.swift */; };
+		AFC38E8030AFDFEE2731D658 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76CC22620D73CB2FE080297 /* SettingsViewModel.swift */; };
+		B0FAFE93D93391EB72AACCE3 /* TimeZoneSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C799EF8DEC9E102C4BB32800 /* TimeZoneSelection.swift */; };
+		BB33D010EB897BA620C7810E /* TideCalculations+Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026756F712366440FDB993C8 /* TideCalculations+Forecast.swift */; };
+		C094822ABF9B361BDD9A5158 /* MidnightLinesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89ECD8A4809DB6A49225F2D2 /* MidnightLinesView.swift */; };
+		CCF35EF4E95143B703F8B26D /* MoonUpIntervalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31AF08095F82FFB0B3203FE /* MoonUpIntervalsView.swift */; };
+		D09F4DE128EB851BB2881EED /* TideModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = B906A7A26C07A6FE09D59022 /* TideModels.swift */; };
+		D3DC0344751F3108CC33F0A9 /* MoonUpIntervalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31AF08095F82FFB0B3203FE /* MoonUpIntervalsView.swift */; };
+		D5DDC932F7DFBE5D2FDB7E47 /* TideChartMath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F5E0D39682317D40AFB0F9 /* TideChartMath.swift */; };
+		F04A8A3B3C579C6E463C5B83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CD3A08471D64C6FA417A776 /* Assets.xcassets */; };
+		F211EC07D1A8289246733EFD /* TideCalculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F1DB4FF980A1DFE97F8053 /* TideCalculations.swift */; };
+		F411FA25E3C90A183B657059 /* ExtremaBadgesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E899FBF6472B8814DC1F7FB /* ExtremaBadgesView.swift */; };
+		F6E937C906E9A1B9E3F57BC4 /* TideCalibration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F6FF80643B419EDBBFA581 /* TideCalibration.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DC074B8BD9E3DB97908DF6C8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D9293011734801DFAF183F4D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 83A1A2D62612054A7B3EBB4C;
+			remoteInfo = CelestialTidesWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		375F204B980E88E33B66DFAE /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				4CE8B8E16AD596E871D15553 /* CelestialTidesWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		00EDB5415B642CDE82D3F1D3 /* CelestialOffsetSettingsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelestialOffsetSettingsSection.swift; sourceTree = "<group>"; };
+		026756F712366440FDB993C8 /* TideCalculations+Forecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TideCalculations+Forecast.swift"; sourceTree = "<group>"; };
+		0928A6C7D1198BB4D88BBCEF /* LocationSettingsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSettingsSection.swift; sourceTree = "<group>"; };
+		1461B59E0AB3D263F7FFBD1E /* CelestialTidesWidgetExtension.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = CelestialTidesWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		1754EACB03C5274F06484479 /* CelestialTidesWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelestialTidesWidget.swift; sourceTree = "<group>"; };
+		1E899FBF6472B8814DC1F7FB /* ExtremaBadgesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtremaBadgesView.swift; sourceTree = "<group>"; };
+		25E4E952D406DA08D9E7F4B1 /* AppExplainerSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppExplainerSheet.swift; sourceTree = "<group>"; };
+		2CA2AF779A0F5D92398BC683 /* TideRuntime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TideRuntime.swift; sourceTree = "<group>"; };
+		2CD3A08471D64C6FA417A776 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		30F5E0D39682317D40AFB0F9 /* TideChartMath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TideChartMath.swift; sourceTree = "<group>"; };
+		3BAC9C0F70D9675E8C6B94EE /* TidePathView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TidePathView.swift; sourceTree = "<group>"; };
+		5DBEC1CBBE0686E130FCDE6E /* TideCalculations+Astronomy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TideCalculations+Astronomy.swift"; sourceTree = "<group>"; };
+		6906FB277AC8F8A38F77F659 /* FutureTidesTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FutureTidesTable.swift; sourceTree = "<group>"; };
+		6B2565063017312FB4B0CAB0 /* TideConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TideConfiguration.swift; sourceTree = "<group>"; };
+		83833C2C91D63DDDB5DFD793 /* LastSelectionPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastSelectionPanel.swift; sourceTree = "<group>"; };
+		89ECD8A4809DB6A49225F2D2 /* MidnightLinesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MidnightLinesView.swift; sourceTree = "<group>"; };
+		8A1DF622645CBD4D3593B1B6 /* CelestialTidesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelestialTidesApp.swift; sourceTree = "<group>"; };
+		93C137F95206E99BFE536DA2 /* TideChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TideChart.swift; sourceTree = "<group>"; };
+		9854ED3F64EC93DB1EBE5988 /* SettingsSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSheet.swift; sourceTree = "<group>"; };
+		9A73E26B027611269785B2F9 /* TopNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopNavigationView.swift; sourceTree = "<group>"; };
+		9C55A8E062CFAFEEE0FD739D /* SharedDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedDefaults.swift; sourceTree = "<group>"; };
+		A1F1DB4FF980A1DFE97F8053 /* TideCalculations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TideCalculations.swift; sourceTree = "<group>"; };
+		A31AF08095F82FFB0B3203FE /* MoonUpIntervalsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonUpIntervalsView.swift; sourceTree = "<group>"; };
+		AD70B5AB65DB5B494D05F819 /* CelestialTides.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = CelestialTides.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B906A7A26C07A6FE09D59022 /* TideModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TideModels.swift; sourceTree = "<group>"; };
+		BDE7F01DA37F6102A0202C80 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		C41931DE405CAD6FF23E8AB0 /* LastSelectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastSelectionCell.swift; sourceTree = "<group>"; };
+		C799EF8DEC9E102C4BB32800 /* TimeZoneSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeZoneSelection.swift; sourceTree = "<group>"; };
+		CFFE84F068BDA3A91D9429F2 /* TideViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TideViewModel.swift; sourceTree = "<group>"; };
+		D76CC22620D73CB2FE080297 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		DE85FD04E255C708BA7E6DDD /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		E00392BA8137990F7E5C1E78 /* CelestialTidesApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CelestialTidesApp.entitlements; sourceTree = "<group>"; };
+		E1BCF0279B5B541DBA006A6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		E3B0E9BF79ECDE0A5517E5EE /* CelestialTidesWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CelestialTidesWidget.entitlements; sourceTree = "<group>"; };
+		F7F6FF80643B419EDBBFA581 /* TideCalibration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TideCalibration.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		15E5F337154E05750702D6C1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AD70B5AB65DB5B494D05F819 /* CelestialTides.app */,
+				1461B59E0AB3D263F7FFBD1E /* CelestialTidesWidgetExtension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		201657EFE9B92EFA046D335A /* CelestialTidesWidget */ = {
+			isa = PBXGroup;
+			children = (
+				E3B0E9BF79ECDE0A5517E5EE /* CelestialTidesWidget.entitlements */,
+				1754EACB03C5274F06484479 /* CelestialTidesWidget.swift */,
+				E1BCF0279B5B541DBA006A6A /* Info.plist */,
+			);
+			path = CelestialTidesWidget;
+			sourceTree = "<group>";
+		};
+		CEDE1DF4711A5F7088E23AC0 = {
+			isa = PBXGroup;
+			children = (
+				DD21E9F83CC3227781658DE4 /* CelestialTidesApp */,
+				201657EFE9B92EFA046D335A /* CelestialTidesWidget */,
+				15E5F337154E05750702D6C1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DD21E9F83CC3227781658DE4 /* CelestialTidesApp */ = {
+			isa = PBXGroup;
+			children = (
+				25E4E952D406DA08D9E7F4B1 /* AppExplainerSheet.swift */,
+				2CD3A08471D64C6FA417A776 /* Assets.xcassets */,
+				00EDB5415B642CDE82D3F1D3 /* CelestialOffsetSettingsSection.swift */,
+				E00392BA8137990F7E5C1E78 /* CelestialTidesApp.entitlements */,
+				8A1DF622645CBD4D3593B1B6 /* CelestialTidesApp.swift */,
+				BDE7F01DA37F6102A0202C80 /* ContentView.swift */,
+				1E899FBF6472B8814DC1F7FB /* ExtremaBadgesView.swift */,
+				6906FB277AC8F8A38F77F659 /* FutureTidesTable.swift */,
+				C41931DE405CAD6FF23E8AB0 /* LastSelectionCell.swift */,
+				83833C2C91D63DDDB5DFD793 /* LastSelectionPanel.swift */,
+				DE85FD04E255C708BA7E6DDD /* LocationManager.swift */,
+				0928A6C7D1198BB4D88BBCEF /* LocationSettingsSection.swift */,
+				89ECD8A4809DB6A49225F2D2 /* MidnightLinesView.swift */,
+				A31AF08095F82FFB0B3203FE /* MoonUpIntervalsView.swift */,
+				9854ED3F64EC93DB1EBE5988 /* SettingsSheet.swift */,
+				D76CC22620D73CB2FE080297 /* SettingsViewModel.swift */,
+				9C55A8E062CFAFEEE0FD739D /* SharedDefaults.swift */,
+				A1F1DB4FF980A1DFE97F8053 /* TideCalculations.swift */,
+				5DBEC1CBBE0686E130FCDE6E /* TideCalculations+Astronomy.swift */,
+				026756F712366440FDB993C8 /* TideCalculations+Forecast.swift */,
+				F7F6FF80643B419EDBBFA581 /* TideCalibration.swift */,
+				93C137F95206E99BFE536DA2 /* TideChart.swift */,
+				30F5E0D39682317D40AFB0F9 /* TideChartMath.swift */,
+				6B2565063017312FB4B0CAB0 /* TideConfiguration.swift */,
+				B906A7A26C07A6FE09D59022 /* TideModels.swift */,
+				3BAC9C0F70D9675E8C6B94EE /* TidePathView.swift */,
+				2CA2AF779A0F5D92398BC683 /* TideRuntime.swift */,
+				CFFE84F068BDA3A91D9429F2 /* TideViewModel.swift */,
+				C799EF8DEC9E102C4BB32800 /* TimeZoneSelection.swift */,
+				9A73E26B027611269785B2F9 /* TopNavigationView.swift */,
+			);
+			path = CelestialTidesApp;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8065B1D949F758A571461A49 /* CelestialTides */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1756414C66117832918E9CA6 /* Build configuration list for PBXNativeTarget "CelestialTides" */;
+			buildPhases = (
+				112A1FC9AC87DC39F3902109 /* Sources */,
+				0E4E3BEE97FEE5EFA026706F /* Resources */,
+				375F204B980E88E33B66DFAE /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				98D34713EF810FB5EFB11E61 /* PBXTargetDependency */,
+			);
+			name = CelestialTides;
+			packageProductDependencies = (
+			);
+			productName = CelestialTides;
+			productReference = AD70B5AB65DB5B494D05F819 /* CelestialTides.app */;
+			productType = "com.apple.product-type.application";
+		};
+		83A1A2D62612054A7B3EBB4C /* CelestialTidesWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 78FA6FEC8C552AC39E258401 /* Build configuration list for PBXNativeTarget "CelestialTidesWidgetExtension" */;
+			buildPhases = (
+				4464DD6912DCCD40D8AF0BD7 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CelestialTidesWidgetExtension;
+			packageProductDependencies = (
+			);
+			productName = CelestialTidesWidgetExtension;
+			productReference = 1461B59E0AB3D263F7FFBD1E /* CelestialTidesWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D9293011734801DFAF183F4D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+			};
+			buildConfigurationList = 1CC6BC98584EF67A4783A5A0 /* Build configuration list for PBXProject "CelestialTides" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = CEDE1DF4711A5F7088E23AC0;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8065B1D949F758A571461A49 /* CelestialTides */,
+				83A1A2D62612054A7B3EBB4C /* CelestialTidesWidgetExtension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0E4E3BEE97FEE5EFA026706F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F04A8A3B3C579C6E463C5B83 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		112A1FC9AC87DC39F3902109 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9467197399D149D624813891 /* AppExplainerSheet.swift in Sources */,
+				6FEDD614767DFC72C1EFF18E /* CelestialOffsetSettingsSection.swift in Sources */,
+				3DC9BD48C8A379642B0248F4 /* CelestialTidesApp.swift in Sources */,
+				572F80C909AD6F697D6E5CB7 /* ContentView.swift in Sources */,
+				63224D4C301AB7478DD53B2B /* ExtremaBadgesView.swift in Sources */,
+				220C1D2FEACE0B8CF7A04757 /* FutureTidesTable.swift in Sources */,
+				49EF3B0106F5D45A9656A073 /* LastSelectionCell.swift in Sources */,
+				84B25031D506E06086B05E1E /* LastSelectionPanel.swift in Sources */,
+				65FEB0D4B86DF825A5520356 /* LocationManager.swift in Sources */,
+				60BEDB82398BB334431F06E1 /* LocationSettingsSection.swift in Sources */,
+				A11A4A569BC8A380A4C20765 /* MidnightLinesView.swift in Sources */,
+				D3DC0344751F3108CC33F0A9 /* MoonUpIntervalsView.swift in Sources */,
+				873FBDAC8950E1186058C347 /* SettingsSheet.swift in Sources */,
+				AFC38E8030AFDFEE2731D658 /* SettingsViewModel.swift in Sources */,
+				3EE51DEF359610D74C6FD1C9 /* SharedDefaults.swift in Sources */,
+				931C87EF70C664D93B42FF5C /* TideCalculations+Astronomy.swift in Sources */,
+				0E5368C9E872EE29143E16A1 /* TideCalculations+Forecast.swift in Sources */,
+				F211EC07D1A8289246733EFD /* TideCalculations.swift in Sources */,
+				F6E937C906E9A1B9E3F57BC4 /* TideCalibration.swift in Sources */,
+				091DE8C66C0D54E5010E28FA /* TideChart.swift in Sources */,
+				D5DDC932F7DFBE5D2FDB7E47 /* TideChartMath.swift in Sources */,
+				A4918D55AE17F9C9DCEECEB6 /* TideConfiguration.swift in Sources */,
+				D09F4DE128EB851BB2881EED /* TideModels.swift in Sources */,
+				13563460858CBC330FEC829B /* TidePathView.swift in Sources */,
+				9E137EFFE45D64693C380898 /* TideRuntime.swift in Sources */,
+				A919345C4B290292C7D9E8DE /* TideViewModel.swift in Sources */,
+				30E1056C18235D1B37CCE2E5 /* TimeZoneSelection.swift in Sources */,
+				9714E1FDEBC59C67F8955FA5 /* TopNavigationView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4464DD6912DCCD40D8AF0BD7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52AF1DAFC0928838D0BD367E /* CelestialTidesWidget.swift in Sources */,
+				F411FA25E3C90A183B657059 /* ExtremaBadgesView.swift in Sources */,
+				C094822ABF9B361BDD9A5158 /* MidnightLinesView.swift in Sources */,
+				CCF35EF4E95143B703F8B26D /* MoonUpIntervalsView.swift in Sources */,
+				8D3A8D5B2B04EE915E27175A /* SharedDefaults.swift in Sources */,
+				AE443215981C4D844627E95C /* TideCalculations+Astronomy.swift in Sources */,
+				BB33D010EB897BA620C7810E /* TideCalculations+Forecast.swift in Sources */,
+				5D91FDE1E07E39037F5D4AB6 /* TideCalculations.swift in Sources */,
+				14DCFFD7FB3396221CEF6EFD /* TideCalibration.swift in Sources */,
+				9CFA3128650ECF9A52453C2D /* TideChart.swift in Sources */,
+				6FC7250C029C315DF94A9A74 /* TideChartMath.swift in Sources */,
+				8E3004FE77241D2C11BB3A87 /* TideConfiguration.swift in Sources */,
+				8BA6514CB13E8596086EC65C /* TideModels.swift in Sources */,
+				25711EED59C970DA4BCC31BC /* TidePathView.swift in Sources */,
+				22672CE260E31CED3CEC0607 /* TideRuntime.swift in Sources */,
+				B0FAFE93D93391EB72AACCE3 /* TimeZoneSelection.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		98D34713EF810FB5EFB11E61 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 83A1A2D62612054A7B3EBB4C /* CelestialTidesWidgetExtension */;
+			targetProxy = DC074B8BD9E3DB97908DF6C8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		374903BD18483FB514CB0E47 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		3ACBB97732DD3DDEFBE4A644 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = CelestialTidesWidget/CelestialTidesWidget.entitlements;
+				CURRENT_PROJECT_VERSION = 1;
+				EXCLUDED_ARCHS = "";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = CelestialTidesWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Celestial Tides";
+				INFOPLIST_KEY_CFBundleName = "Celestial Tides";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.CelestialTides.CelestialTidesWidgetExtension;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		449878AB49A9BF525947143B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = CelestialTidesApp/CelestialTidesApp.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Celestial Tides";
+				INFOPLIST_KEY_CFBundleName = "Celestial Tides";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Celestial Tides uses your location to estimate tides from sun/moon geometry and Earth-Sun distance. Results are approximate and may differ from local stations.";
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.CelestialTides;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7B3BF88927221C655E0C24BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = CelestialTidesWidget/CelestialTidesWidget.entitlements;
+				CURRENT_PROJECT_VERSION = 1;
+				EXCLUDED_ARCHS = "";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = CelestialTidesWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Celestial Tides";
+				INFOPLIST_KEY_CFBundleName = "Celestial Tides";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.CelestialTides.CelestialTidesWidgetExtension;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		A03BF15BC2BCE0208C9AD7C6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = CelestialTidesApp/CelestialTidesApp.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Celestial Tides";
+				INFOPLIST_KEY_CFBundleName = "Celestial Tides";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Celestial Tides uses your location to estimate tides from sun/moon geometry and Earth-Sun distance. Results are approximate and may differ from local stations.";
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.CelestialTides;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		B6957644E94899682B21101B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1756414C66117832918E9CA6 /* Build configuration list for PBXNativeTarget "CelestialTides" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				449878AB49A9BF525947143B /* Debug */,
+				A03BF15BC2BCE0208C9AD7C6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		1CC6BC98584EF67A4783A5A0 /* Build configuration list for PBXProject "CelestialTides" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B6957644E94899682B21101B /* Debug */,
+				374903BD18483FB514CB0E47 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		78FA6FEC8C552AC39E258401 /* Build configuration list for PBXNativeTarget "CelestialTidesWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3ACBB97732DD3DDEFBE4A644 /* Debug */,
+				7B3BF88927221C655E0C24BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D9293011734801DFAF183F4D /* Project object */;
+}
