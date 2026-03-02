@@ -21,3 +21,9 @@ DerivedData/
 .xcode-dd-app/
 .xcode-dd-widget/
 .xcode-derived-data/
+
+# Build artifacts & secrets
+build/
+*.log
+ExportOptions.plist
+UploadOptions.plist
