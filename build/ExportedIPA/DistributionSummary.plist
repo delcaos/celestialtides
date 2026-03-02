@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CelestialTides.ipa</key>
+	<array>
+		<dict>
+			<key>architectures</key>
+			<array>
+				<string>arm64</string>
+			</array>
+			<key>buildNumber</key>
+			<string>1</string>
+			<key>certificate</key>
+			<dict>
+				<key>SHA1</key>
+				<string>E56B1A9906B3F61505F428C955A1A3BEE8F0C6C0</string>
+				<key>dateExpires</key>
+				<string>2027-03-02</string>
+				<key>type</key>
+				<string>Cloud Managed Apple Distribution</string>
+			</dict>
+			<key>embeddedBinaries</key>
+			<array>
+				<dict>
+					<key>architectures</key>
+					<array>
+						<string>arm64</string>
+					</array>
+					<key>buildNumber</key>
+					<string>1</string>
+					<key>certificate</key>
+					<dict>
+						<key>SHA1</key>
+						<string>E56B1A9906B3F61505F428C955A1A3BEE8F0C6C0</string>
+						<key>dateExpires</key>
+						<string>2027-03-02</string>
+						<key>type</key>
+						<string>Cloud Managed Apple Distribution</string>
+					</dict>
+					<key>entitlements</key>
+					<dict>
+						<key>application-identifier</key>
+						<string>8Z9NAFG85L.app.delcaos.celestialtides.CelestialTidesWidgetExtension</string>
+						<key>beta-reports-active</key>
+						<true/>
+						<key>com.apple.developer.team-identifier</key>
+						<string>8Z9NAFG85L</string>
+						<key>com.apple.security.application-groups</key>
+						<array>
+							<string>group.app.delcaos.celestialtides</string>
+						</array>
+						<key>get-task-allow</key>
+						<false/>
+					</dict>
+					<key>name</key>
+					<string>CelestialTidesWidgetExtension.appex</string>
+					<key>profile</key>
+					<dict>
+						<key>UUID</key>
+						<string>1a5323f8-4039-4b1c-a9c7-2e629642732a</string>
+						<key>dateExpires</key>
+						<string>2027-03-02</string>
+						<key>name</key>
+						<string>iOS Team Store Provisioning Profile: app.delcaos.celestialtides.CelestialTidesWidgetExtension</string>
+					</dict>
+					<key>symbols</key>
+					<true/>
+					<key>team</key>
+					<dict>
+						<key>id</key>
+						<string>8Z9NAFG85L</string>
+						<key>name</key>
+						<string>Eric Springer</string>
+					</dict>
+					<key>versionNumber</key>
+					<string>1.0</string>
+				</dict>
+			</array>
+			<key>entitlements</key>
+			<dict>
+				<key>application-identifier</key>
+				<string>8Z9NAFG85L.app.delcaos.celestialtides</string>
+				<key>beta-reports-active</key>
+				<true/>
+				<key>com.apple.developer.team-identifier</key>
+				<string>8Z9NAFG85L</string>
+				<key>com.apple.security.application-groups</key>
+				<array>
+					<string>group.app.delcaos.celestialtides</string>
+				</array>
+				<key>get-task-allow</key>
+				<false/>
+			</dict>
+			<key>name</key>
+			<string>CelestialTides.app</string>
+			<key>profile</key>
+			<dict>
+				<key>UUID</key>
+				<string>80366949-1eff-430b-80e1-45eae7ddd110</string>
+				<key>dateExpires</key>
+				<string>2027-03-02</string>
+				<key>name</key>
+				<string>iOS Team Store Provisioning Profile: app.delcaos.celestialtides</string>
+			</dict>
+			<key>symbols</key>
+			<true/>
+			<key>team</key>
+			<dict>
+				<key>id</key>
+				<string>8Z9NAFG85L</string>
+				<key>name</key>
+				<string>Eric Springer</string>
+			</dict>
+			<key>versionNumber</key>
+			<string>1.0</string>
+		</dict>
+	</array>
+</dict>
+</plist>

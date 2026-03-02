@@ -2,7 +2,6 @@ import SwiftUI
 
 struct TopNavigationView: View {
     let onSettingsTap: () -> Void
-    let onInfoTap: () -> Void
     
     var body: some View {
         HStack(spacing: 12) {
@@ -13,19 +12,6 @@ struct TopNavigationView: View {
                 .minimumScaleFactor(0.85)
 
             Spacer(minLength: 8)
-
-            Button(action: onInfoTap) {
-                Image(systemName: "info.circle")
-                    .font(.system(size: 20, weight: .semibold))
-                    .foregroundColor(.white)
-                    .frame(width: 42, height: 42)
-                    .background(
-                        Circle()
-                            .fill(Color.white.opacity(0.08))
-                    )
-            }
-            .buttonStyle(.plain)
-            .accessibilityLabel("Information")
 
             Button(action: onSettingsTap) {
                 Image(systemName: "gearshape")

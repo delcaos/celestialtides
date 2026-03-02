@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 63;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -33,7 +33,6 @@
 		8D3A8D5B2B04EE915E27175A /* SharedDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C55A8E062CFAFEEE0FD739D /* SharedDefaults.swift */; };
 		8E3004FE77241D2C11BB3A87 /* TideConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2565063017312FB4B0CAB0 /* TideConfiguration.swift */; };
 		931C87EF70C664D93B42FF5C /* TideCalculations+Astronomy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBEC1CBBE0686E130FCDE6E /* TideCalculations+Astronomy.swift */; };
-		9467197399D149D624813891 /* AppExplainerSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E4E952D406DA08D9E7F4B1 /* AppExplainerSheet.swift */; };
 		9714E1FDEBC59C67F8955FA5 /* TopNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A73E26B027611269785B2F9 /* TopNavigationView.swift */; };
 		9CFA3128650ECF9A52453C2D /* TideChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C137F95206E99BFE536DA2 /* TideChart.swift */; };
 		9E137EFFE45D64693C380898 /* TideRuntime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA2AF779A0F5D92398BC683 /* TideRuntime.swift */; };
@@ -83,10 +82,9 @@
 		00EDB5415B642CDE82D3F1D3 /* CelestialOffsetSettingsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelestialOffsetSettingsSection.swift; sourceTree = "<group>"; };
 		026756F712366440FDB993C8 /* TideCalculations+Forecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TideCalculations+Forecast.swift"; sourceTree = "<group>"; };
 		0928A6C7D1198BB4D88BBCEF /* LocationSettingsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSettingsSection.swift; sourceTree = "<group>"; };
-		1461B59E0AB3D263F7FFBD1E /* CelestialTidesWidgetExtension.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = CelestialTidesWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		1461B59E0AB3D263F7FFBD1E /* CelestialTidesWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CelestialTidesWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		1754EACB03C5274F06484479 /* CelestialTidesWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelestialTidesWidget.swift; sourceTree = "<group>"; };
 		1E899FBF6472B8814DC1F7FB /* ExtremaBadgesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtremaBadgesView.swift; sourceTree = "<group>"; };
-		25E4E952D406DA08D9E7F4B1 /* AppExplainerSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppExplainerSheet.swift; sourceTree = "<group>"; };
 		2CA2AF779A0F5D92398BC683 /* TideRuntime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TideRuntime.swift; sourceTree = "<group>"; };
 		2CD3A08471D64C6FA417A776 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		30F5E0D39682317D40AFB0F9 /* TideChartMath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TideChartMath.swift; sourceTree = "<group>"; };
@@ -103,7 +101,7 @@
 		9C55A8E062CFAFEEE0FD739D /* SharedDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedDefaults.swift; sourceTree = "<group>"; };
 		A1F1DB4FF980A1DFE97F8053 /* TideCalculations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TideCalculations.swift; sourceTree = "<group>"; };
 		A31AF08095F82FFB0B3203FE /* MoonUpIntervalsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonUpIntervalsView.swift; sourceTree = "<group>"; };
-		AD70B5AB65DB5B494D05F819 /* CelestialTides.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = CelestialTides.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD70B5AB65DB5B494D05F819 /* CelestialTides.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CelestialTides.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B906A7A26C07A6FE09D59022 /* TideModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TideModels.swift; sourceTree = "<group>"; };
 		BDE7F01DA37F6102A0202C80 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C41931DE405CAD6FF23E8AB0 /* LastSelectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastSelectionCell.swift; sourceTree = "<group>"; };
@@ -149,7 +147,6 @@
 		DD21E9F83CC3227781658DE4 /* CelestialTidesApp */ = {
 			isa = PBXGroup;
 			children = (
-				25E4E952D406DA08D9E7F4B1 /* AppExplainerSheet.swift */,
 				2CD3A08471D64C6FA417A776 /* Assets.xcassets */,
 				00EDB5415B642CDE82D3F1D3 /* CelestialOffsetSettingsSection.swift */,
 				E00392BA8137990F7E5C1E78 /* CelestialTidesApp.entitlements */,
@@ -200,8 +197,6 @@
 				98D34713EF810FB5EFB11E61 /* PBXTargetDependency */,
 			);
 			name = CelestialTides;
-			packageProductDependencies = (
-			);
 			productName = CelestialTides;
 			productReference = AD70B5AB65DB5B494D05F819 /* CelestialTides.app */;
 			productType = "com.apple.product-type.application";
@@ -217,8 +212,6 @@
 			dependencies = (
 			);
 			name = CelestialTidesWidgetExtension;
-			packageProductDependencies = (
-			);
 			productName = CelestialTidesWidgetExtension;
 			productReference = 1461B59E0AB3D263F7FFBD1E /* CelestialTidesWidgetExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
@@ -242,7 +235,7 @@
 			);
 			mainGroup = CEDE1DF4711A5F7088E23AC0;
 			minimizedProjectReferenceProxies = 1;
-			preferredProjectObjectVersion = 77;
+			productRefGroup = 15E5F337154E05750702D6C1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -268,7 +261,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9467197399D149D624813891 /* AppExplainerSheet.swift in Sources */,
 				6FEDD614767DFC72C1EFF18E /* CelestialOffsetSettingsSection.swift in Sources */,
 				3DC9BD48C8A379642B0248F4 /* CelestialTidesApp.swift in Sources */,
 				572F80C909AD6F697D6E5CB7 /* ContentView.swift in Sources */,
@@ -368,6 +360,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 8Z9NAFG85L;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -405,7 +398,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.CelestialTides.CelestialTidesWidgetExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = app.delcaos.celestialtides.CelestialTidesWidgetExtension;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -423,13 +416,15 @@
 				INFOPLIST_KEY_CFBundleName = "Celestial Tides";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Celestial Tides uses your location to estimate tides from sun/moon geometry and Earth-Sun distance. Results are approximate and may differ from local stations.";
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.CelestialTides;
+				PRODUCT_BUNDLE_IDENTIFIER = app.delcaos.celestialtides;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -439,6 +434,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = CelestialTidesWidget/CelestialTidesWidget.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				EXCLUDED_ARCHS = "";
 				GENERATE_INFOPLIST_FILE = NO;
@@ -452,7 +449,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.CelestialTides.CelestialTidesWidgetExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = app.delcaos.celestialtides.CelestialTidesWidgetExtension;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -463,20 +460,23 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = CelestialTidesApp/CelestialTidesApp.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "Celestial Tides";
 				INFOPLIST_KEY_CFBundleName = "Celestial Tides";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Celestial Tides uses your location to estimate tides from sun/moon geometry and Earth-Sun distance. Results are approximate and may differ from local stations.";
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.CelestialTides;
+				PRODUCT_BUNDLE_IDENTIFIER = app.delcaos.celestialtides;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -517,6 +517,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 8Z9NAFG85L;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;

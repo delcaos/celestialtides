@@ -10,12 +10,12 @@ struct ContentView: View {
     @AppStorage(SharedDefaults.Key.hoursBeforeNow, store: SharedDefaults.store) private var hoursBeforeNow: Int = TideConfigurationLimits.defaultHoursBeforeNow
     @AppStorage(SharedDefaults.Key.hoursAfterNow, store: SharedDefaults.store) private var hoursAfterNow: Int = TideConfigurationLimits.defaultHoursAfterNow
     @AppStorage(SharedDefaults.Key.hasSeenExplainer, store: SharedDefaults.store) private var hasSeenExplainer: Bool = false
+    @AppStorage(SharedDefaults.Key.isTideCalibrated, store: SharedDefaults.store) private var isTideCalibrated: Bool = true
 
     @StateObject private var locationManager = LocationManager()
     @State private var viewModel = TideViewModel()
     
     @State private var showSettings: Bool = false
-    @State private var showExplainer: Bool = false
 
     private struct ChartRefreshInput: Equatable {
         let selectedTimeZone: String
@@ -68,45 +68,69 @@ struct ContentView: View {
         
         VStack(spacing: 0) {
             TopNavigationView(
-                onSettingsTap: { showSettings = true },
-                onInfoTap: { showExplainer = true }
+                onSettingsTap: { showSettings = true }
             )
 
             ScrollView {
-                VStack(alignment: .leading, spacing: 12) {
-                    chartContainer
-                        .frame(height: 320)
-                        .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 12, style: .continuous)
-                                .stroke(Color.white.opacity(0.14), lineWidth: 1)
+                if !isTideCalibrated {
+                    VStack(spacing: 16) {
+                        Image(systemName: "exclamationmark.triangle.fill")
+                            .font(.system(size: 48))
+                            .foregroundColor(.orange)
+                        Text("Calibration Required")
+                            .font(.title2.bold())
+                        Text("Please set the next high tide for your new location in settings to calibrate the forecast.")
+                            .multilineTextAlignment(.center)
+                            .foregroundColor(.secondary)
+                        Button(action: { showSettings = true }) {
+                            Text("Open Settings")
+                                .fontWeight(.semibold)
+                                .foregroundColor(.white)
+                                .padding(.horizontal, 24)
+                                .padding(.vertical, 12)
+                                .background(Color.blue)
+                                .clipShape(Capsule())
+                        }
+                    }
+                    .frame(maxWidth: .infinity)
+                    .padding(.top, 60)
+                    .padding(.horizontal, 32)
+                } else {
+                    VStack(alignment: .leading, spacing: 12) {
+                        chartContainer
+                            .frame(height: 320)
+                            .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 12, style: .continuous)
+                                    .stroke(Color.white.opacity(0.14), lineWidth: 1)
+                            )
+
+                        LastSelectionPanel(
+                            lastSelectedPoint: viewModel.lastSelectedPoint,
+                            timeFormatter: { date in
+                                viewModel.detailDateTimeString(date, timeZone: resolvedTimeZone)
+                            },
+                            trendLabelProvider: viewModel.trendLabel(for:),
+                            phaseNameProvider: viewModel.phaseName(for:)
                         )
 
-                    LastSelectionPanel(
-                        lastSelectedPoint: viewModel.lastSelectedPoint,
-                        timeFormatter: { date in
-                            viewModel.detailDateTimeString(date, timeZone: resolvedTimeZone)
-                        },
-                        trendLabelProvider: viewModel.trendLabel(for:),
-                        phaseNameProvider: viewModel.phaseName(for:)
-                    )
-
-                    FutureTidesTable(
-                        futureRangeStart: $bindableViewModel.futureRangeStart,
-                        futureRangeEnd: $bindableViewModel.futureRangeEnd,
-                        futureExtrema: viewModel.futureExtrema,
-                        dateStringProvider: { date in
-                            viewModel.tableDateString(date, timeZone: resolvedTimeZone)
-                        },
-                        timeStringProvider: { date in
-                            viewModel.tableTimeString(date, timeZone: resolvedTimeZone)
-                        }
-                    )
+                        FutureTidesTable(
+                            futureRangeStart: $bindableViewModel.futureRangeStart,
+                            futureRangeEnd: $bindableViewModel.futureRangeEnd,
+                            futureExtrema: viewModel.futureExtrema,
+                            dateStringProvider: { date in
+                                viewModel.tableDateString(date, timeZone: resolvedTimeZone)
+                            },
+                            timeStringProvider: { date in
+                                viewModel.tableTimeString(date, timeZone: resolvedTimeZone)
+                            }
+                        )
+                    }
+                    .frame(maxWidth: .infinity, alignment: .topLeading)
+                    .padding(.horizontal, 12)
+                    .padding(.top, 10)
+                    .padding(.bottom, 24)
                 }
-                .frame(maxWidth: .infinity, alignment: .topLeading)
-                .padding(.horizontal, 12)
-                .padding(.top, 10)
-                .padding(.bottom, 24)
             }
             .scrollIndicators(.hidden)
         }
@@ -131,14 +155,10 @@ struct ContentView: View {
             )
             .preferredColorScheme(.dark)
         }
-        .sheet(isPresented: $showExplainer) {
-            AppExplainerSheet()
-                .preferredColorScheme(.dark)
-        }
         .preferredColorScheme(.dark)
         .onAppear {
             if !hasSeenExplainer {
-                showExplainer = true
+                showSettings = true
                 hasSeenExplainer = true
             }
             locationManager.onLocationUpdated = { loc in

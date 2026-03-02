@@ -6,7 +6,7 @@ import SwiftUI
 @Observable
 @MainActor
 public final class SettingsViewModel {
-    public var nextHighTide: Date = Date()
+    public var nextHighTide: Date? = nil
     public var mapCameraPosition: MapCameraPosition = .automatic
     public var showingInfoAlert: Bool = false
     public var isInternalUpdate: Bool = false
@@ -72,9 +72,7 @@ public final class SettingsViewModel {
 
     public func handleCoordinateChange(
         customLatitude: Binding<Double>,
-        customLongitude: Binding<Double>,
-        offsetHours: Int,
-        offsetMinutes: Int
+        customLongitude: Binding<Double>
     ) {
         let clampedLat = TideConfigurationLimits.clampLatitude(customLatitude.wrappedValue)
         let clampedLon = TideConfigurationLimits.clampLongitude(customLongitude.wrappedValue)
@@ -91,12 +89,6 @@ public final class SettingsViewModel {
         if !isMapUpdatingCoords {
             updateMapCamera(customLatitude: customLatitude.wrappedValue, customLongitude: customLongitude.wrappedValue)
         }
-        updateNextHighTideFromOffset(
-            offsetHours: offsetHours,
-            offsetMinutes: offsetMinutes,
-            customLatitude: customLatitude.wrappedValue,
-            customLongitude: customLongitude.wrappedValue
-        )
     }
     
     public func updateMapCamera(customLatitude: Double, customLongitude: Double) {
@@ -115,8 +107,9 @@ public final class SettingsViewModel {
         customLongitude: Double,
         resolvedTimeZone: TimeZone
     ) {
+        guard let validNextHighTide = nextHighTide else { return }
         let referenceNow = roundedToMinute(Date())
-        let normalizedNextHighTide = normalizedNextHighTideDate(from: nextHighTide, now: referenceNow, resolvedTimeZone: resolvedTimeZone)
+        let normalizedNextHighTide = normalizedNextHighTideDate(from: validNextHighTide, now: referenceNow, resolvedTimeZone: resolvedTimeZone)
         let loc = CelestialComputationLocation(
             latitude: TideConfigurationLimits.clampLatitude(customLatitude),
             longitude: TideConfigurationLimits.clampLongitude(customLongitude)
