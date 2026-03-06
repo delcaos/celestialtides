@@ -97,10 +97,7 @@ public final class TideViewModel {
     }
     
     public func trendLabel(for date: Date) -> String {
-        guard !points.isEmpty else { return "Stable" }
-        guard let index = points.enumerated().min(by: {
-            abs($0.element.timestamp.timeIntervalSince(date)) < abs($1.element.timestamp.timeIntervalSince(date))
-        })?.offset else {
+        guard !points.isEmpty, let index = TideCalculations.nearestPointIndex(in: points, to: date) else {
             return "Stable"
         }
 

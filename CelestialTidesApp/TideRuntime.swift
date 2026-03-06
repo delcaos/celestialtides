@@ -64,15 +64,21 @@ extension TideCalculations {
         let totalHours = Double(before + after)
         let pastDate = Calendar.current.date(byAdding: .hour, value: -before, to: date) ?? date
 
-        let points = buildTideForecast(
+        let paddedStart = pastDate.addingTimeInterval(-2 * 3600)
+        let paddedTotalHours = totalHours + 4.0
+
+        let paddedPoints = buildTideForecast(
             location: location,
-            hours: totalHours,
+            hours: paddedTotalHours,
             stepMinutes: 1,
             celestialOffsetHours: config.offsetHours,
-            startTime: pastDate
+            startTime: paddedStart
         )
 
-        let extrema = findTideExtrema(points: points)
+        let endDate = pastDate.addingTimeInterval(totalHours * 3600)
+        let points = paddedPoints.filter { $0.timestamp >= pastDate && $0.timestamp <= endDate }
+        let extrema = findTideExtrema(points: paddedPoints).filter { $0.timestamp >= pastDate && $0.timestamp <= endDate }
+
         return (points, extrema)
     }
 
@@ -105,21 +111,56 @@ extension TideCalculations {
         let stepMinutes = max(1.0, ceil(totalMinutes / 60_000.0))
         let totalHours = endExclusive.timeIntervalSince(normalizedRange.start) / 3_600.0
 
+        let paddedStart = normalizedRange.start.addingTimeInterval(-2 * 3600)
+        let paddedTotalHours = totalHours + 4.0
+
         let forecast = buildTideForecast(
             location: location,
-            hours: totalHours,
+            hours: paddedTotalHours,
             stepMinutes: stepMinutes,
             celestialOffsetHours: config.offsetHours,
-            startTime: normalizedRange.start
+            startTime: paddedStart
         )
 
         return findTideExtrema(points: forecast)
             .filter { $0.timestamp >= normalizedRange.start && $0.timestamp < endExclusive }
     }
 
+    public static func nearestPointIndex(in points: [TideForecastPoint], to targetDate: Date) -> Int? {
+        guard !points.isEmpty else { return nil }
+
+        var low = 0
+        var high = points.count - 1
+
+        let targetTime = targetDate.timeIntervalSince1970
+        if targetTime <= points[low].timestamp.timeIntervalSince1970 { return low }
+        if targetTime >= points[high].timestamp.timeIntervalSince1970 { return high }
+
+        while low <= high {
+            let mid = low + (high - low) / 2
+            let midTime = points[mid].timestamp.timeIntervalSince1970
+
+            if midTime == targetTime {
+                return mid
+            } else if midTime < targetTime {
+                low = mid + 1
+            } else {
+                high = mid - 1
+            }
+        }
+
+        let lowTime = points[low].timestamp.timeIntervalSince1970
+        let highTime = points[high].timestamp.timeIntervalSince1970
+
+        if abs(lowTime - targetTime) < abs(highTime - targetTime) {
+            return low
+        } else {
+            return high
+        }
+    }
+
     public static func nearestPoint(in points: [TideForecastPoint], to targetDate: Date) -> TideForecastPoint? {
-        points.min(by: {
-            abs($0.timestamp.timeIntervalSince(targetDate)) < abs($1.timestamp.timeIntervalSince(targetDate))
-        })
+        guard let index = nearestPointIndex(in: points, to: targetDate) else { return nil }
+        return points[index]
     }
 }

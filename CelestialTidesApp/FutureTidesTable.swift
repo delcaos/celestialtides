@@ -80,7 +80,7 @@ struct FutureTidesTable: View {
                             .padding(.vertical, 16)
                             .frame(maxWidth: .infinity)
                     } else {
-                        ForEach(Array(futureExtrema.enumerated()), id: \.offset) { index, extremum in
+                        ForEach(futureExtrema, id: \.timestamp) { extremum in
                             LazyVGrid(columns: futureTableColumns, spacing: 8) {
                                 Text(dateStringProvider(extremum.timestamp))
                                     .frame(maxWidth: .infinity, alignment: .leading)
@@ -98,7 +98,7 @@ struct FutureTidesTable: View {
                             .padding(.vertical, 10)
                             .background(Color.white.opacity(0.02))
 
-                            if index < futureExtrema.count - 1 {
+                            if extremum.timestamp != futureExtrema.last?.timestamp {
                                 Divider()
                                     .overlay(Color.white.opacity(0.06))
                             }

@@ -23,7 +23,7 @@ struct ExtremaBadgesView: View {
     }
 
     var body: some View {
-        ForEach(Array(extrema.enumerated()), id: \.offset) { _, extremum in
+        ForEach(extrema, id: \.timestamp) { extremum in
             let x = TideChartMath.timeToX(extremum.timestamp, points: points, width: width)
             let tideY = TideChartMath.panelValueToY(extremum.tidePercent, min: chartMin, max: chartMax, top: topMargin, height: panelHeight)
             let isHigh = extremum.type == .high

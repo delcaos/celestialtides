@@ -84,6 +84,7 @@ struct CelestialOffsetSettingsSection: View {
                                 isInternalUpdateAction()
                                 nextHighTide = tempSelectedDate
                                 isTideCalibrated = true
+                                calculateOffset()
                                 Task { @MainActor in
                                     isInternalUpdateFinishedAction()
                                 }

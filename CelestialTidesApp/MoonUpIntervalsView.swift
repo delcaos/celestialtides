@@ -19,7 +19,7 @@ struct MoonUpIntervalsView: View {
             let middleY = TideChartMath.panelValueToY(0, min: chartMin, max: chartMax, top: topMargin, height: panelHeight)
             let moonBarY = middleY
 
-            ForEach(Array(moonUpIntervals.enumerated()), id: \.offset) { _, interval in
+            ForEach(moonUpIntervals, id: \.start) { interval in
                 let startX = TideChartMath.timeToX(interval.start, points: points, width: width)
                 let endX = TideChartMath.timeToX(interval.end, points: points, width: width)
                 

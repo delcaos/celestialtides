@@ -8,12 +8,15 @@ extension TideCalculations {
         horizonHours: Double = 18.0,
         stepMinutes: Double = 1.0
     ) -> TideExtremum? {
+        let paddedStart = referenceDate.addingTimeInterval(-2 * 3600)
+        let paddedHorizon = horizonHours + 4.0
+
         let forecast = buildTideForecast(
             location: location,
-            hours: horizonHours,
+            hours: paddedHorizon,
             stepMinutes: stepMinutes,
             celestialOffsetHours: celestialOffsetHours,
-            startTime: referenceDate
+            startTime: paddedStart
         )
 
         return findTideExtrema(points: forecast)
