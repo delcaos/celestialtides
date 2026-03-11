@@ -10,7 +10,7 @@ struct SettingsSheet: View {
     @Binding var hoursBeforeNow: Int
     @Binding var hoursAfterNow: Int
     
-    @AppStorage(SharedDefaults.Key.isTideCalibrated, store: SharedDefaults.store) private var isTideCalibrated: Bool = true
+    @AppStorage(SharedDefaults.Key.isTideCalibrated, store: SharedDefaults.store) private var isTideCalibrated: Bool = false
     
     @State private var viewModel = SettingsViewModel()
     @State private var hasAppeared = false

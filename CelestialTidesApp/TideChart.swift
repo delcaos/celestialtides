@@ -194,3 +194,193 @@ public struct TideChart: View {
         }
     }
 }
+
+public struct AccessoryCircularTideView: View {
+    public var points: [TideForecastPoint]
+    public var extrema: [TideExtremum]
+    public var currentTime: Date
+
+    public init(points: [TideForecastPoint], extrema: [TideExtremum], currentTime: Date) {
+        self.points = points
+        self.extrema = extrema
+        self.currentTime = currentTime
+    }
+
+    public var body: some View {
+        GeometryReader { geometry in
+            let width = geometry.size.width
+            let height = geometry.size.height
+            
+            if points.isEmpty {
+                ZStack {
+                    Circle().strokeBorder(Color.primary.opacity(0.3), lineWidth: 2)
+                    Text("--")
+                        .font(.system(size: 10))
+                }
+            } else {
+                let sortedPoints = points.sorted(by: { $0.timestamp < $1.timestamp })
+                let displayMin = -100.0
+                let displayMax = 100.0
+
+                TimelineView(.periodic(from: Date(), by: 60.0)) { context in
+                    let nextExtremum = extrema.first(where: { $0.timestamp > context.date })
+                    let isRising = nextExtremum?.type == .high
+                    
+                    ZStack {
+                        // Background Chart
+                        Path { path in
+                            var first = true
+                            for point in sortedPoints {
+                                let x = TideChartMath.timeToX(point.timestamp, points: sortedPoints, width: width)
+                                let y = TideChartMath.panelValueToY(point.tidePercent, min: displayMin, max: displayMax, top: 0, height: height)
+                                if first {
+                                    path.move(to: CGPoint(x: x, y: y))
+                                    first = false
+                                } else {
+                                    path.addLine(to: CGPoint(x: x, y: y))
+                                }
+                            }
+                        }
+                        .stroke(Color.primary.opacity(0.5), style: StrokeStyle(lineWidth: 2.0, lineCap: .round, lineJoin: .round))
+                        
+                        // Current time indicator and Up/Down Arrow
+                        if let nowX = TideChartMath.currentNowX(currentTime: context.date, points: sortedPoints, width: width) {
+                            Path { path in
+                                path.move(to: CGPoint(x: nowX, y: 0))
+                                path.addLine(to: CGPoint(x: nowX, y: height))
+                            }
+                            .stroke(Color.primary.opacity(0.6), style: StrokeStyle(lineWidth: 1, dash: [2, 2]))
+                            
+                            if let current = TideCalculations.nearestPoint(in: sortedPoints, to: context.date) {
+                                let y = TideChartMath.panelValueToY(current.tidePercent, min: displayMin, max: displayMax, top: 0, height: height)
+                                
+                                Circle()
+                                    .fill(Color.primary)
+                                    .frame(width: 6, height: 6)
+                                    .position(x: nowX, y: y)
+                            }
+                            
+                            // (No center icon as per user request to remove arrow and waves)
+                        }
+                        
+                        // Border to make it look circular
+                        Circle().strokeBorder(Color.primary.opacity(0.2), lineWidth: 1.5)
+                    }
+                    .clipShape(Circle())
+                }
+            }
+        }
+    }
+}
+
+public struct AccessoryRectangularTideView: View {
+    public var points: [TideForecastPoint]
+    public var extrema: [TideExtremum]
+    public var currentTime: Date
+
+    public init(points: [TideForecastPoint], extrema: [TideExtremum], currentTime: Date) {
+        self.points = points
+        self.extrema = extrema
+        self.currentTime = currentTime
+    }
+
+    public var body: some View {
+        GeometryReader { geometry in
+            let width = geometry.size.width
+            let height = geometry.size.height
+            
+            if points.isEmpty {
+                let nowX = width / 2
+                Path { path in
+                    path.move(to: CGPoint(x: nowX, y: 0))
+                    path.addLine(to: CGPoint(x: nowX, y: height))
+                }
+                .stroke(Color.primary.opacity(0.6), style: StrokeStyle(lineWidth: 1, dash: [4, 4]))
+                
+                Text("No Data")
+                    .font(.caption2)
+                    .foregroundColor(.secondary)
+                    .position(x: nowX, y: height / 2)
+            } else {
+                let sortedPoints = points.sorted(by: { $0.timestamp < $1.timestamp })
+                let displayMin = -100.0
+                let displayMax = 100.0
+
+                TimelineView(.periodic(from: Date(), by: 60.0)) { context in
+                    // Draw current time line first so it's behind the curve
+                    if let nowX = TideChartMath.currentNowX(currentTime: context.date, points: sortedPoints, width: width) {
+                        Path { path in
+                            path.move(to: CGPoint(x: nowX, y: 0))
+                            path.addLine(to: CGPoint(x: nowX, y: height))
+                        }
+                        .stroke(Color.primary.opacity(0.6), style: StrokeStyle(lineWidth: 1, dash: [4, 4]))
+                        
+                        // Draw a dot for current time
+                        if let current = TideCalculations.nearestPoint(in: sortedPoints, to: context.date) {
+                            let y = TideChartMath.panelValueToY(current.tidePercent, min: displayMin, max: displayMax, top: 0, height: height)
+                            Circle()
+                                .fill(Color.primary)
+                                .frame(width: 8, height: 8)
+                                .position(x: nowX, y: y)
+                        }
+                    }
+                }
+
+                // Draw a simple path
+                Path { path in
+                    var first = true
+                    for point in sortedPoints {
+                        let x = TideChartMath.timeToX(point.timestamp, points: sortedPoints, width: width)
+                        let y = TideChartMath.panelValueToY(point.tidePercent, min: displayMin, max: displayMax, top: 0, height: height)
+                        if first {
+                            path.move(to: CGPoint(x: x, y: y))
+                            first = false
+                        } else {
+                            path.addLine(to: CGPoint(x: x, y: y))
+                        }
+                    }
+                }
+                .stroke(Color.primary, style: StrokeStyle(lineWidth: 2.5, lineCap: .round, lineJoin: .round))
+            }
+        }
+        .padding(.vertical, 4)
+    }
+}
+
+public struct AccessoryInlineTideView: View {
+    public var points: [TideForecastPoint]
+    public var extrema: [TideExtremum]
+    public var currentTime: Date
+    public var timeZone: TimeZone
+
+    public init(points: [TideForecastPoint], extrema: [TideExtremum], currentTime: Date, timeZone: TimeZone) {
+        self.points = points
+        self.extrema = extrema
+        self.currentTime = currentTime
+        self.timeZone = timeZone
+    }
+
+    private func timeString(for date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.timeStyle = .short
+        formatter.timeZone = timeZone
+        return formatter.string(from: date)
+    }
+
+    public var body: some View {
+        TimelineView(.periodic(from: Date(), by: 60.0)) { context in
+            if let nextExtremum = extrema.first(where: { $0.timestamp > context.date }) {
+                let label = nextExtremum.type == .high ? "High" : "Low"
+                let timeStr = timeString(for: nextExtremum.timestamp)
+                
+                ViewThatFits {
+                    Text(Image(systemName: "water.waves")).bold() + Text(" \(label) tide at \(timeStr)")
+                    Text("\(label) tide at \(timeStr)")
+                    Text("\(label) at \(timeStr)")
+                }
+            } else {
+                Text("Tides • No Data")
+            }
+        }
+    }
+}

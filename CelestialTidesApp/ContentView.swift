@@ -10,7 +10,7 @@ struct ContentView: View {
     @AppStorage(SharedDefaults.Key.hoursBeforeNow, store: SharedDefaults.store) private var hoursBeforeNow: Int = TideConfigurationLimits.defaultHoursBeforeNow
     @AppStorage(SharedDefaults.Key.hoursAfterNow, store: SharedDefaults.store) private var hoursAfterNow: Int = TideConfigurationLimits.defaultHoursAfterNow
     @AppStorage(SharedDefaults.Key.hasSeenExplainer, store: SharedDefaults.store) private var hasSeenExplainer: Bool = false
-    @AppStorage(SharedDefaults.Key.isTideCalibrated, store: SharedDefaults.store) private var isTideCalibrated: Bool = true
+    @AppStorage(SharedDefaults.Key.isTideCalibrated, store: SharedDefaults.store) private var isTideCalibrated: Bool = false
 
     @StateObject private var locationManager = LocationManager()
     @State private var viewModel = TideViewModel()
